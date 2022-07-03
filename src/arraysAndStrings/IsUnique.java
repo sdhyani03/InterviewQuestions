@@ -1,5 +1,6 @@
 package arraysAndStrings;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Objects;
 
@@ -25,6 +26,21 @@ public class IsUnique {
 				break;
 			}
 		}
+		return !duplicateEntryFound;
+	}
+	
+public static boolean withoutAdditionalDataStructure(String word) {
+		
+		char[] charArray=word.toCharArray();
+		Arrays.sort(charArray);
+		boolean duplicateEntryFound=false;
+		
+		for(int i=0;i<charArray.length-1;i++) {
+			if(charArray[i]==charArray[i+1]) {
+				duplicateEntryFound=true;
+			}
+		}
+		
 		return !duplicateEntryFound;
 	}
 
